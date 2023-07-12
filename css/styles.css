@@ -332,6 +332,50 @@ img {
     color: var(--light-color);
 }
 
+.fotter-text1{
+    color: var(--white-color);
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 1.5;
+    letter-spacing: 0.02em;
+}
+
+.footer-container {
+    display: flex;
+}
+
+.footer-list-container {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.footer-list {
+    display: flex;
+    gap: 16px;
+}
+
+.footer-top-container {
+    margin-right: 120px;
+}
+
+.footer-icon-block {
+    display: flex;
+    width: 40px;
+    height: 40px;
+    background-color: var(--primary-brand-color);
+    border-radius: 50%;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.footer-icon-link:is(:hover, :focus) .footer-icon-block{
+    background-color: #31D0AA;
+}
+
+
 /* *--------Portfolio-------- */
 .btn-list > li > button {
     color: var(--primary-brand-color);
