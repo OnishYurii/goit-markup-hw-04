@@ -188,10 +188,28 @@ img {
     padding-bottom: 24px;
 }
 
+.current {
+    position: relative;
+}
+
+.current::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 4px;
+    border-radius: 2px;
+    background-color: var(--pressed-state-color);
+    bottom: -4px;
+    left: 0;
+
+}
+
 /** ------Solution------ */
 .solution {
     background-color: var(--dark-color);
     background-image: linear-gradient(rgba(46, 47, 66, 0.70), rgba(46, 47, 66, 0.70)), url(../images/hero-bg.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
     padding-top: 188px;
     padding-bottom: 188px;
 }
@@ -493,4 +511,51 @@ img {
     padding: 32px 16px;
     border: 1px solid var(--accent-color);
     border-top: none;
+}
+
+/* *--------Modal-------- */
+.backdrop {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    background-color: rgba(46, 47, 66, 0.507);
+    transition: opacity 300ms ease-out, visibility 300ms ease-out;
+}
+
+.modal {
+    width: 408px;
+    min-height: 584px;
+    background-color: #FCFCFC;
+    border-radius: 4px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%) scaleX(1);
+    transition: transform 300ms ease-out;
+}
+
+.backdrop.is-hidden .modal {
+    transform: translate(-50%, -50%) scaleX(3);
+}
+
+.modal-close-btn {
+    cursor: pointer;
+    position: absolute;
+    top: 32px;
+    right: 32px;
+    border-radius: 50%;
+    background-color: var(--accent-color);
+    border: 1px solid rgba(0, 0, 0, 0.10);
+    width: 24px;
+    height: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.is-hidden {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
 }
